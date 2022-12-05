@@ -28,16 +28,16 @@ app.use("/api/admin", adminRoutes);
 app.use("/api", homeRoutes);
 app.use("/api/user", authRoute);
 
-// For Production Build
+// // For Production Build
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+// const __dirname = dirname(fileURLToPath(import.meta.url));
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static("client/build"));
 
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-  });
-}
+//   app.get("*", (req, res) => {
+//     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+//   });
+// }
 
 // DB Connection
 
