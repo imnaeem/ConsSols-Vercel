@@ -28,6 +28,12 @@ app.use("/api/admin", adminRoutes);
 app.use("/api", homeRoutes);
 app.use("/api/user", authRoute);
 
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+app.get("/", (req, res) => {
+  res.sendFile("index.html", { root: path.join(__dirname, "public") });
+});
+
 // // For Production Build
 
 // const __dirname = dirname(fileURLToPath(import.meta.url));
