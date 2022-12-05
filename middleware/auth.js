@@ -16,7 +16,9 @@ const auth = async (req, res, next) => {
 
     next();
   } catch (error) {
-    console.log(error);
+    res
+      .status(401)
+      .json({ message: "Sorry! You are not authorized to access this page" });
   }
 };
 
